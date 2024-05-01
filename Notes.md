@@ -28,3 +28,16 @@
 * src/providers/theme-provider.tsx content from shadcn https://ui.shadcn.com/docs/dark-mode/next
 
 * wrap layout within ThemeProvider
+
+# Use https in localhost with nextJS
+* In package.json
+> next dev --experimental-https
+
+```
+Downloading mkcert package...
+Download response was successful, writing to disk
+Attempting to generate self signed certificate. This may prompt for your password
+CA Root certificate created in C:\Users\...\AppData\Local\mkcert
+Certificates created in C:\Users\...\Work\Dev\web-learning-projects\nextjs\webprodigies-fuzzie-app\certificates
+Adding certificates to .gitignore
+```
