@@ -9,3 +9,6 @@
 * didn't work. Try this:
 
 > bun create next-app@latest . --typescript --tailwind --eslint
+
+> bun --bun x shadcn-ui@latest init
+* default style/slate/yes for css/
