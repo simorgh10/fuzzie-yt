@@ -41,3 +41,6 @@ CA Root certificate created in C:\Users\...\AppData\Local\mkcert
 Certificates created in C:\Users\...\Work\Dev\web-learning-projects\nextjs\webprodigies-fuzzie-app\certificates
 Adding certificates to .gitignore
 ```
+
+# Navbar
+* 
