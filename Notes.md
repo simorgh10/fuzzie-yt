@@ -12,3 +12,19 @@
 
 > bun --bun x shadcn-ui@latest init
 * default style/slate/yes for css/
+
+* copy globals.css from github
+
+# Aceternity UI
+
+* https://ui.aceternity.com/components/3d-card-effect
+
+> bun add framer-motion clsx tailwind-merge
+
+* Shadcn Dark mode themes: https://ui.shadcn.com/docs/dark-mode/next
+
+> bun add next-themes
+
+* src/providers/theme-provider.tsx content from shadcn https://ui.shadcn.com/docs/dark-mode/next
+
+* wrap layout within ThemeProvider
