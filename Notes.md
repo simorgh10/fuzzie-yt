@@ -48,4 +48,7 @@ Adding certificates to .gitignore
 # Font
 * use DM_Sans font
 * The Fashboard/GetStarted is from aceternity UI
-* 
+
+# Setup Animations
+* copy tailwind config from github. the difference is + some interactions, animations, maybe some colors
+
