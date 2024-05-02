@@ -44,3 +44,8 @@ Adding certificates to .gitignore
 
 # Navbar
 * 
+
+# Font
+* use DM_Sans font
+* The Fashboard/GetStarted is from aceternity UI
+* 
