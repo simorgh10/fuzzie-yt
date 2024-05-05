@@ -64,3 +64,21 @@ Adding certificates to .gitignore
 
 
 > bun --bun x shadcn-ui@latest add card
+
+# 40k through social media in 2 weeks
+* Automatic Lead Generating Machine. $0 dollars to spend, 0 cold outreach, clients come to you.
+* SINGLE BEST BUSINESS MODEL - Social Media Influencer
+* Become a creator, and monetize anything you want
+* Make passive income
+
+# Sidebar
+
+> bun --bun x shadcn-ui@latest add tooltip
+
+* copy icons from github
+
+> bun --bun x shadcn-ui@latest add separator
+
+* the mode tooggle copy it from giuthub but you can grab it from Shadcn
+
+* 

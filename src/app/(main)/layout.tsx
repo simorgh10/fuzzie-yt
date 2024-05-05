@@ -1,15 +1,16 @@
-import React from "react";
+import Sidebar from "@/components/sidebar"
 
 type Props = {
   children: React.ReactNode;
 };
 
 const Layout = ({ children }: Props) => {
-  return <div className="flex overflow-hidden h-screen">
-    <div className="h-full">
-        {children}
+  return (
+    <div className="flex overflow-hidden h-screen">
+      <Sidebar />
+      <div className="h-full">{children}</div>
     </div>
-  </div>
+  );
 };
 
 export default Layout;
