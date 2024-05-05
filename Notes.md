@@ -52,3 +52,15 @@ Adding certificates to .gitignore
 # Setup Animations
 * copy tailwind config from github. the difference is + some interactions, animations, maybe some colors
 
+# Landing Page
+* copy container scroll animarion from github. Coms originally from Aceternity UI with adaptation
+* https://ui.aceternity.com/components/container-scroll-animation
+
+> bun --bun x shadcn-ui@latest add button
+
+* Inifinite Moving Cards, HeroParallax, Lamp, 3d-card and Sparkles from github. Originally from Aceternity with adaptation
+
+> bun i framer-motion clsx tailwind-merge @tsparticles/react @tsparticles/engine @tsparticles/slim
+
+
+> bun --bun x shadcn-ui@latest add card
