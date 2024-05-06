@@ -81,4 +81,10 @@ Adding certificates to .gitignore
 
 * the mode tooggle copy it from giuthub but you can grab it from Shadcn
 
-* 
+# Dark and Light modes
+
+> bun --bun x shadcn-ui@latest add dropdown-menu
+
+* for infobar
+
+> bun --bun x shadcn-ui@latest add input
