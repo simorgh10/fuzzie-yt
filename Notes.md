@@ -88,3 +88,9 @@ Adding certificates to .gitignore
 * for infobar
 
 > bun --bun x shadcn-ui@latest add input
+
+# Settings Page
+
+* see https://css-tricks.com/how-to-tame-line-height-in-css/
+
+> bun --bun x shadcn-ui@latest add form

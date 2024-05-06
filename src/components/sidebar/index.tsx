@@ -68,7 +68,7 @@ const MenuOptions = (props: Props) => {
         >
           <div
             className="relative dark:bg-[#353346]/70 p-2 rounded-full
-            dark:border-t-[2px] border-[1px] dar:border-t-[##353346]"
+            dark:border-t-[2px] border-[1px] dark:border-t-[##353346]"
           >
             <LucideMousePointerClick className="dark:text-white" size={18} />
             <div className="absolute left-1/2 -bottom-[30px] border-l-2 border-muted-foreground/50
