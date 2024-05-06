@@ -22,7 +22,7 @@ const MenuOptions = (props: Props) => {
 
   return (
     <nav
-      className="dark:bg-black h-screen overflow-scroll
+      className="dark:bg-black h-full overflow-scroll
   justify-between flex items-center flex-col gap-10 py-6 px-2"
     >
       <div className="flex items-center justify-center flex-col gap-8">
@@ -101,7 +101,7 @@ const MenuOptions = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className="flex-1 flex items-center justify-center flex-col gap-8">
+      <div className="flex items-center justify-center flex-col gap-8">
         <ModeToggle />
       </div>
     </nav>
