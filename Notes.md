@@ -94,3 +94,30 @@ Adding certificates to .gitignore
 * see https://css-tricks.com/how-to-tame-line-height-in-css/
 
 > bun --bun x shadcn-ui@latest add form
+
+# Prisma And Neon Tech
+
+> bun i -D prisma
+
+> bun x prisma init
+
+* create a neontech project/database and copy database url into .env.local file
+
+> bun x prisma generate
+
+* needs to create client (lib.db.ts)
+* again
+
+> bun x prisma generate  (Why ?)
+
+> bun x prisma db push
+
+* copy rest of schema from github
+
+> bun x prisma generate
+
+> bun x prisma db push
+
+* open prisma studio
+
+> bun x prisma studio
