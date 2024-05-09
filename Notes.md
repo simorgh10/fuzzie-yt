@@ -121,3 +121,85 @@ Adding certificates to .gitignore
 * open prisma studio
 
 > bun x prisma studio
+
+# Uploadcare
+
+> bun add @uploadcare/blocks --save-exact
+(see https://stackoverflow.com/questions/58638817/what-is-the-purpose-of-using-save-exact)
+
+```
+If you are using TypeScript in your project add the following line to the tsconfig.json:
+
+
+"types": ["@uploadcare/blocks/types/jsx"]
+```
+
+# Clerk
+
+* create a new clerk application fuzzie-yt
+
+> bun add @clerk/nextjs
+
+* Setup your environment variables
+
+* Add ClerkProvider to your app
+
+* Update middleware.ts (authMiddleware is deprecated use clerkMioddleware https://clerk.com/docs/references/nextjs/clerk-middleware)
+
+* authMiddleware is deprecated. Used clerkMiddleware but no clue how to distinguish between ignores and public routes. So put them all in the same matcher.
+
+# Setup Google Cloud Console
+
+* go on clerk, for Google enable use custom credentials, and add drive.activity.readonly + drive.metadata + drive.readonly
+  + https://www.googleapis.com/auth/drive.activity.readonly
+  + https://www.googleapis.com/auth/drive.metadata
+  + https://www.googleapis.com/auth/drive.readonly
+
+* go to google developer console, create project, fuzzie-production, API & services, OAuth consent screen click on external, fill app name fuzzie-app, put an email, developer contact information, save and continue, then save and continue again -> then back to dashboard
+
+* create credentials -> OAuth client -> app type web application -> fuzzie-app -> for utis go back to clerk the copu Authorized redirect URI (google dialog modal), but just the domain, also add localhost:3000, then on authorized redirect URI paste the full url
+
+* once saved, copy clientID + client secret back to clerk google modal
+
+# NGrok
+
+* used to allow to call a localhost address from a webhook. tool to communicate between your local dev host and a hosted link
+
+* installed ngrok from https://dashboard.ngrok.com/get-started/setup/windows
+
+> ngrok config add-authtoken <...>
+
+* token saved to config file C:\Users\<user>\AppData\Local/ngrok/ngrok.yml
+
+> ngrok http https://localhost:3000
+
+```
+Try our new Traffic Inspector Dev Preview: https://ngrok.com/r/ti                                                                                                                                                                               Session Status                online                                                                                    Account                       <email> (Plan: Free)                                            Version                       3.9.0                                                                                     Region                        Europe (eu)                                                                               Web Interface                 http://127.0.0.1:4040                                                                     Forwarding                    https://<URL> -> https://localhost:3000                                                                                                                        Connections                   ttl     opn     rt1     rt5     p50     p90                                                                             0       0       0.00    0.00    0.00    0.00                                              
+```
+
+* copy forwarding url
+* on clerk create webhook > new endpoint and paste ngrok forwarding url to which concatenate  /api/clerk-webhook
+* On Message Filtering click on user/user.created+updated
+
+# Sign-in and Sign-up page
+
+* [[...sign-in]] is an optional catch all segment
+
+* src/api/clerk-webhook, add a POST webhook
+
+* when trying to signing in, got this error
+```
+accounts.dev n'a pas terminé la procédure de validation de Google. L'appli est en cours de test, et seuls les testeurs approuvés par le développeur y ont accès. Si vous pensez que vous devriez y avoir accès, contactez le développeur.
+Si vous êtes un développeur de accounts.dev, consultez les détails de l'erreur.
+Erreur 403 : access_denied
+```
+
+* OAuth consent screen > test user > add your email
+
+* also add https://localhost:3000 to credentials callback uris
+
+* In next.config.js add img.clerk.com under images
+
+* In profileform the video author suffested that {...field} shopuld be above everything else but he does not know why. maybe because oif the disabled prop ??? TODO investigate
+
+* 
