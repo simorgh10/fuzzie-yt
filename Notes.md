@@ -202,4 +202,10 @@ Erreur 403 : access_denied
 
 * In profileform the video author suffested that {...field} shopuld be above everything else but he does not know why. maybe because oif the disabled prop ??? TODO investigate
 
-* 
+# Global State Management
+
+* create Modal Context
+
+> bun --bun x shadcn-ui@latest add drawer
+
+> bun --bun x shadcn-ui@latest add switch
