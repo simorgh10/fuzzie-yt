@@ -209,3 +209,23 @@ Erreur 403 : access_denied
 > bun --bun x shadcn-ui@latest add drawer
 
 > bun --bun x shadcn-ui@latest add switch
+
+# Editor
+
+* React Flow
+
+> bun install reactflow
+
+> bun --bun x shadcn-ui@latest add badge
+
+> bun --bun x shadcn-ui@latest add resizable
+
+> bun --bun x shadcn-ui@latest add sonner
+
+> bun add uuid
+
+> bun add --save-dev @types/uuid
+
+* used //@ts-ignore above setNodes
+
+> bun --bun x shadcn-ui@latest add tabs
