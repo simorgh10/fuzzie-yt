@@ -229,3 +229,13 @@ Erreur 403 : access_denied
 * used //@ts-ignore above setNodes
 
 > bun --bun x shadcn-ui@latest add tabs
+
+> bun --bun x shadcn-ui@latest add accordion
+
+> bun add zustand
+
+* got multiple-selector from https://shadcnui-expansions.typeart.cc/docs/multiple-selector. Seems identical to https://github.com/webprodigies/fuzzie-production/blob/main/src/components/ui/multiple-selector.tsx
+
+> bun --bun x shadcn-ui@latest add command badge
+
+> bun add axios

@@ -18,7 +18,7 @@ export type Connection = {
   description: string;
   image: string;
   connectionKey: keyof ConnectionProviderProps;
-  accesTokenKey?: string;
+  accessTokenKey?: string;
   alwaysTrue?: boolean;
   slackSpecial?: boolean;
 };
@@ -83,3 +83,10 @@ export type EditorActions =
         element: EditorNode;
       };
     };
+
+export const nodeMapper: Record<string, string> = {
+  Notion: "notionMode",
+  Slack: "slackMode",
+  Discord: "discordMode",
+  "Google Drive": "googleNode",
+};

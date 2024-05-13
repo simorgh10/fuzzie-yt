@@ -121,6 +121,8 @@ export const EditorContext = createContext<{
   dispatch: Dispatch<EditorActions>;
 }>({
   state: initialState,
+  // From myt understanding, this definition is just to enable having dispatch in context
+  // But the dispatch value is maintained by the reducer hook
   dispatch: () => undefined,
 });
 

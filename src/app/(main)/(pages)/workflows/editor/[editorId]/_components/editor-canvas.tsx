@@ -52,18 +52,20 @@ const EditorCanvas = (props: Props) => {
 
   const onDragOver = useCallback((event: any) => {
     event.preventDefault();
-    console.log("onDragOver");
     event.dataTransfer.dropEffect = "move";
   }, []);
 
   const onNodesChange = useCallback(
     (changes: NodeChange[]) => {
-      console.log("changing", changes);
       //@ts-ignore
       setNodes((nds) => applyNodeChanges(changes, nds));
     },
     [setNodes]
   );
+
+  useEffect(() => {
+    console.log(nodes);
+  }, [nodes]);
 
   const onEdgesChange = useCallback(
     (changes: EdgeChange[]) => {
@@ -152,6 +154,7 @@ const EditorCanvas = (props: Props) => {
       Slack: EditorCanvasCardSingle,
       "Google Drive": EditorCanvasCardSingle,
       Notion: EditorCanvasCardSingle,
+      Discord: EditorCanvasCardSingle,
       "Custom Webhook": EditorCanvasCardSingle,
       "Google Calendar": EditorCanvasCardSingle,
       Trigger: EditorCanvasCardSingle,

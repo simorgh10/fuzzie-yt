@@ -98,6 +98,7 @@ const EditorCanvasIconHelper = ({ type }: Props) => {
         />
       )
     default:
+      // Discord case
       return (
         <Zap
           className="flex-shrink-0"
