@@ -239,3 +239,16 @@ Erreur 403 : access_denied
 > bun --bun x shadcn-ui@latest add command badge
 
 > bun add axios
+
+> bun add @notionhq/client
+
+* TODO: ariaChecked ? Why not just use checked ?
+
+From Bing Copilot
+```
+Unlike native HTML checkboxes, custom elements require explicit ARIA attributes to communicate their state.
+
+When using custom elements, developers often set ariaChecked to indicate whether the element is checked (true), unchecked (false), or in an indeterminate state (mixed).
+```
+
+* 

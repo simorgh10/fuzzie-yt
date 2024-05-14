@@ -11,9 +11,9 @@ import { CONNECTIONS, EditorCanvasDefaultCardTypes } from "@/lib/constants";
 import { EditorCanvasTypes, EditorNodeType } from "@/lib/types";
 import { useNodeConnections } from "@/providers/connections-provider";
 import { useEditor } from "@/providers/editor-provider";
-import React from "react";
+import React, { useEffect } from "react";
 import EditorCanvasIconHelper from "./editor-canvas-icon-helper";
-import { onDragStart } from "@/lib/editor-utils";
+import { onConnections, onDragStart } from "@/lib/editor-utils";
 
 import {
   Accordion,
@@ -23,15 +23,23 @@ import {
 } from "@/components/ui/accordion";
 import RenderConnectionAccordion from "./render-connection-accordion";
 import RenderOutputAccordion from "./render-output-accordion";
+import { useFuzzieStore } from "@/store";
 
 type Props = {
   nodes: EditorNodeType[];
 };
 
 const EditorCanvasSidebar = ({ nodes }: Props) => {
-  // WIP connect DB stuff
   const { state } = useEditor();
   const { nodeConnection } = useNodeConnections();
+  const { googleFile, setSlackChannels } = useFuzzieStore()
+
+  useEffect(() => {
+    if (state) {
+      onConnections(nodeConnection, state, googleFile)
+    }
+  }, [state])
+
   return (
     <aside>
       <Tabs defaultValue="actions" className="h-screen overflow-scroll pb-24">
