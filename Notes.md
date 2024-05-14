@@ -257,4 +257,15 @@ NextResponse.redirect(
         `https://localhost:3000/connections
 ```
 
+* From google console > APIs and services > credentials > fuzzie-yt, import client ID and client secret.
+* For Notion, search for "Notion Integration", click on Build your First Integration => https://developers.notion.com/docs/create-a-notion-integration. Then https://www.notion.so/my-integrations.
+  + New INtegration > name fuzzie-yt > copy secret
+  + THen Capabilities > check read and insert comments > Save
+  + Distribution > make integration pubic > fuzzie-yt-test|https://localhost:3000|https://localhost:3000/privacypolicy|https://localhost:3000/termsofuse|my test email|redirect_uri:https://localhost:3000/api/auth/callback/notion > Submit then copy ID client and secret key and authorization url
+  
+* For Slack, https://api.slack.com/apps > sign in > create workspace > fuzzie-yt > work -> testing > free plan. Go back to https://api.slack.com/apps > create an app > from scratch > fuzzie-yt > App credentials > copy credentials and create 2 app level tokens ... click generate token and scopes > SLACK_APP_TOKEN scope connections:write + SLACK_BOT_TOKEN connections:write and authorizations:read
+
+* For Discord, https://discord.com/developers/docs/intro, Get Started > Create an App > signin > fuzzie-yt > copy app id into client id and publicKey, then OAuth2 > regenerate and copy client secret (not sure public key is needed). Add Redirect > https://localhost:3000/api/auth/callback/discord. Add scopes identify, connections, guilds, guilds.member.read, webhook.incoming, email then SAVE CHANGES. Select redirect url > import auth url into .env.local
+
 * 
+
