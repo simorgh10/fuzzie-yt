@@ -135,36 +135,36 @@ export const onCreateNodeTemplate = async (
   }
 };
 
-// export const onGetWorkflows = async () => {
-//   const user = await currentUser();
-//   if (user) {
-//     const workflow = await db.workflows.findMany({
-//       where: {
-//         userId: user.id,
-//       },
-//     });
+export const onGetWorkflows = async () => {
+  const user = await currentUser();
+  if (user) {
+    const workflow = await db.workflows.findMany({
+      where: {
+        userId: user.id,
+      },
+    });
 
-//     if (workflow) return workflow;
-//   }
-// };
+    if (workflow) return workflow;
+  }
+};
 
-// export const onCreateWorkflow = async (name: string, description: string) => {
-//   const user = await currentUser();
+export const onCreateWorkflow = async (name: string, description: string) => {
+  const user = await currentUser();
 
-//   if (user) {
-//     //create new workflow
-//     const workflow = await db.workflows.create({
-//       data: {
-//         userId: user.id,
-//         name,
-//         description,
-//       },
-//     });
+  if (user) {
+    //create new workflow
+    const workflow = await db.workflows.create({
+      data: {
+        userId: user.id,
+        name,
+        description,
+      },
+    });
 
-//     if (workflow) return { message: "workflow created" };
-//     return { message: "Oops! try again" };
-//   }
-// };
+    if (workflow) return { message: "workflow created" };
+    return { message: "Oops! try again" };
+  }
+};
 
 // export const onGetNodesEdges = async (flowId: string) => {
 //   const nodesEdges = await db.workflows.findUnique({
