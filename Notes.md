@@ -251,4 +251,10 @@ Unlike native HTML checkboxes, custom elements require explicit ARIA attributes 
 When using custom elements, developers often set ariaChecked to indicate whether the element is checked (true), unchecked (false), or in an indeterminate state (mixed).
 ```
 
+* Is this a good pratctice to include localhost in redirect url ?
+```
+NextResponse.redirect(
+        `https://localhost:3000/connections
+```
+
 * 
