@@ -236,6 +236,8 @@ Erreur 403 : access_denied
 
 * got multiple-selector from https://shadcnui-expansions.typeart.cc/docs/multiple-selector. Seems identical to https://github.com/webprodigies/fuzzie-production/blob/main/src/components/ui/multiple-selector.tsx
 
+> bun add cmdk
+
 > bun --bun x shadcn-ui@latest add command badge
 
 > bun add axios
@@ -271,3 +273,22 @@ NextResponse.redirect(
 * Try to connect to Notion. But befoire create a database. Go to your workspace. Create a new page. Then add inline database type "/data" and select the right option. add created time peoprty to the table. OK!!
 
 * Try to connect to Discord. But have to create a Discord server. Call SimorgTesting's server
+
+
+# Testing content sending
+* Sending messages trough Discord worked
+* For Slack, on Slack console, on canal #testing > v > Integrations > Add App > Add fuzzie-yt Bot
+
+* For some reason cmdk was not recognized as a module. Juste uninstalled and reinstalled it. (??!!)
+
+* But still selecting channel menu not working. Had to rollback to version 0.2.0 of cmdk
+
+> bun uninstall cmdk
+
+> bun install cmdk@0.2.0
+
+* And here could select testing channel and send message !!
+
+* For Notion, make sure the database property is named name not Name nor Nom., and that it corresponds to the property referenced in onCreateNewPageInDatabase
+
+* 
