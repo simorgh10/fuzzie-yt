@@ -85,8 +85,8 @@ export type EditorActions =
     };
 
 export const nodeMapper: Record<string, string> = {
-  Notion: "notionMode",
-  Slack: "slackMode",
-  Discord: "discordMode",
+  Notion: "notionNode",
+  Slack: "slackNode",
+  Discord: "discordNode",
   "Google Drive": "googleNode",
 };
