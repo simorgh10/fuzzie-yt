@@ -43,6 +43,7 @@ export const onCreateNodeTemplate = async (
   accessToken?: string,
   notionDbId?: string
 ) => {
+  console.log("onCreateNodeTemplate", channels)
   if (type === "Discord") {
     const response = await db.workflows.update({
       where: {
@@ -78,12 +79,14 @@ export const onCreateNodeTemplate = async (
         },
       });
 
-      if (channelList) {
+      console.log("ChannelList", channelList, "channels", channels)
+      if (channelList && channelList.slackChannels.length > 0) {
         //remove duplicates before insert
         const NonDuplicated = channelList.slackChannels.filter(
           (channel) => channel !== channels![0].value
         );
 
+        console.log("NonDuplicated", NonDuplicated)
         NonDuplicated!
           .map((channel) => channel)
           .forEach(async (channel) => {
@@ -104,6 +107,7 @@ export const onCreateNodeTemplate = async (
       channels!
         .map((channel) => channel.value)
         .forEach(async (channel) => {
+          console.log("Push channel", channel)
           await db.workflows.update({
             where: {
               id: workflowId,
@@ -166,15 +170,15 @@ export const onCreateWorkflow = async (name: string, description: string) => {
   }
 };
 
-// export const onGetNodesEdges = async (flowId: string) => {
-//   const nodesEdges = await db.workflows.findUnique({
-//     where: {
-//       id: flowId,
-//     },
-//     select: {
-//       nodes: true,
-//       edges: true,
-//     },
-//   });
-//   if (nodesEdges?.nodes && nodesEdges?.edges) return nodesEdges;
-// };
+export const onGetNodesEdges = async (flowId: string) => {
+  const nodesEdges = await db.workflows.findUnique({
+    where: {
+      id: flowId,
+    },
+    select: {
+      nodes: true,
+      edges: true,
+    },
+  });
+  if (nodesEdges?.nodes && nodesEdges?.edges) return nodesEdges;
+};

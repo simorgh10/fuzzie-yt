@@ -291,4 +291,28 @@ NextResponse.redirect(
 
 * For Notion, make sure the database property is named name not Name nor Nom., and that it corresponds to the property referenced in onCreateNewPageInDatabase
 
-* 
+# Listener on Google Drive
+
+> bun add googleapis
+
+* What's this for ?
+```
+flowPath.splice(flowPath[current], 1)
+```
+
+# Cron job
+
+* https://cron-job.org/en/ > login > Settings > Create Key fuzzie-yt
+* Then Display API key, then copy key
+
+# Testing listener
+
+* Start ngrok:
+
+> ./ngrok http https://localhost:3000
+
+* copy url into .env.local
+* Connect Slack with Google Drive
+* Under Google settings, click on Create a Listener
+* You may need to log out/log in in order to fix status 5000 token refresh token error when clicking on Create Listener.
+* make sure Google Drive API is enabled.
