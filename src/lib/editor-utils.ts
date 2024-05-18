@@ -1,6 +1,9 @@
 import { ConnectionProviderProps } from "@/providers/connections-provider";
 import { EditorCanvasCardType } from "./types";
-import { getSlackConnection, listBotChannels } from "@/app/(main)/(pages)/connections/_actions/slack-connections";
+import {
+  getSlackConnection,
+  listBotChannels,
+} from "@/app/(main)/(pages)/connections/_actions/slack-connections";
 import { EditorState } from "@/providers/editor-provider";
 import { getDiscordConnectionUrl } from "@/app/(main)/(pages)/connections/_actions/discord-connections";
 import {
@@ -41,6 +44,7 @@ export const onNotionContent = (
   nodeConnection: ConnectionProviderProps,
   event: React.ChangeEvent<HTMLInputElement>
 ) => {
+  console.log("e", event.target.value);
   nodeConnection.setNotionNode((prev: any) => ({
     ...prev,
     content: event.target.value,
@@ -81,6 +85,16 @@ export const onAddTemplateDiscord = (
   }));
 };
 
+export const onAddTemplateNotion = (
+  nodeConnection: ConnectionProviderProps,
+  template: string
+) => {
+  nodeConnection.setNotionNode((prev: any) => ({
+    ...prev,
+    content: `${prev.content} ${template}`,
+  }));
+};
+
 export const onAddTemplate = (
   nodeConnection: ConnectionProviderProps,
   title: string,
@@ -90,6 +104,8 @@ export const onAddTemplate = (
     onAddTemplateSlack(nodeConnection, template);
   } else if (title === "Discord") {
     onAddTemplateDiscord(nodeConnection, template);
+  } else if (title === "Notion") {
+    onAddTemplateNotion(nodeConnection, template);
   }
 };
 

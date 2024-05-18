@@ -316,3 +316,23 @@ flowPath.splice(flowPath[current], 1)
 * Under Google settings, click on Create a Listener
 * You may need to log out/log in in order to fix status 5000 token refresh token error when clicking on Create Listener.
 * make sure Google Drive API is enabled.
+
+# Payment
+
+> bun add stripe
+
+* what is window.location.assign for ?
+
+> bun --bun x shadcn-ui@latest add progress
+
+* On stripe:
+  1. log into Stripe dashboard > Developers > API keys > SWITCH ON TEST MODE !!!! > import keys into .env.local
+  2. Create a product: Go to Menu > Product Catalog > fill name, description, price check recurring, and also fill Nickname !!!
+
+* test credit card
+  + 4242 4242 4242 4242
+  + 04/26 424
+
+* why localhost:3000 used for redirection ?
+
+* 

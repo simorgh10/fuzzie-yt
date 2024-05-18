@@ -52,7 +52,7 @@ const ActionButton = ({
     if (response) {
       nodeConnection.setNotionNode((prev: any) => ({
         ...prev,
-        content: '',
+        content: "",
       }))
     }
   }, [nodeConnection.notionNode])
