@@ -77,7 +77,7 @@ export async function POST(req: NextRequest) {
               // flowPath.splice(flowPath[current], 1);
             }
             if (flowPath[current] == "Wait") {
-              const uri = process.env.NGROK_URI ?? process.env.NEXT_PUBLIC_URL;
+              const uri = process.env.NGROK_URI || process.env.NEXT_PUBLIC_URL;
               const res = await axios.put(
                 "https://api.cron-job.org/jobs",
                 {

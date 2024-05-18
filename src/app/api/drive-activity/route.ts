@@ -38,7 +38,7 @@ export async function GET() {
     throw new Error("StartPageToken is unexpectedly null");
   }
 
-  const uri = process.env.NGROK_URI ?? process.env.NEXT_PUBLIC_URL;
+  const uri = process.env.NGROK_URI || process.env.NEXT_PUBLIC_URL;
   const listener = await drive.changes.watch({
     pageToken: startPageToken,
     supportsAllDrives: true,

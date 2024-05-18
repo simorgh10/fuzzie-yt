@@ -361,4 +361,29 @@ PrismaClientInitializationError: Prisma has detected that this project was built
 ```
 see https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/vercel-caching-issue
 
-* Solution is to a
+* In Settings, change :
+  + Domain: fuzzie-yt.vercel.app (automatically assigned)
+  + Environment variables: update NEXT_PUBLIC_URL to https://fuzzie-yt.vercel.app, NEXT_PUBLIC_DOMAIN (not used) to fuzzie-yt.vercel.app, and empty. Update NEXT_PUBLIC_DISCORD_REDIRECT, ...
+
+* In Neon, empty database (all tables. not mandatory but good to test)
+
+* In Clerk developer dashboad, https://dashboard.clerk.com/apps, change webhook endpoint to https://fuzzie-yt.vercel.app/ with triggers users.created and users.updated.
+* In CLerk dashboard, Users, remove user. Then logout/logout into the app. User should appears in clerk Users section as well as  created in table User in Neon database.
+
+
+* Discord: https://discord.com/developers/applications > Oauth2 >  add redirect https://fuzzie-yt.vercel.app/api/auth/callback/discord. OK, worked !!!
+
+
+* Notion:
+  + https://www.notion.so/my-integrations> fuzzie-yt > Distribution > URI de redirecation https://fuzzie-yt.vercel.app/api/auth/callback/notion
+
+
+* Slack:
+  + error => redirect_uri did not match any configured URIs. Passed URI: https://fuzzie-yt.vercel.app/api/auth/callback/slack
+  + https://api.slack.com/apps > fuzzie-yt > OAuth & Permissions > Add New Redirect URL : https://fuzzie-yt.vercel.app/api/auth/callback/slack => Worked OK !!!
+
+https://api.notion.com/v1/oauth/authorize?client_id=a9463b90-cf2f-4d18-8d8f-de92375b8954&response_type=code&owner=user&redirect_uri=https%3A%2F%2Ffuzzie-yt.vercel.app%2Fapi%2Fauth%2Fcallback%2Fnotion
+
+https://fuzzie-yt.vercel.app/api/auth/callback/notion
+
+https://api.notion.com/v1/oauth/authorize?client_id=a9463b90-cf2f-4d18-8d8f-de92375b8954&response_type=code&owner=user&redirect_uri=https%3A%2F%2Fhttps://fuzzie-yt.vercel.app%2Fapi%2Fauth%2Fcallback%2Fnotion
