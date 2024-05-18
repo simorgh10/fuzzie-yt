@@ -335,4 +335,10 @@ flowPath.splice(flowPath[current], 1)
 
 * why localhost:3000 used for redirection ?
 
-* 
+# Vercel Deployment
+
+* replace hardcoded references to localhost:3000 by environment variable
+
+> bun run build
+
+> vercel

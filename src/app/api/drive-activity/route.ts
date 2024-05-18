@@ -32,24 +32,24 @@ export async function GET() {
   });
   const channelId = v4();
 
-  const startPageTokenRes = await drive.changes.getStartPageToken({})
-  const startPageToken = startPageTokenRes.data.startPageToken
+  const startPageTokenRes = await drive.changes.getStartPageToken({});
+  const startPageToken = startPageTokenRes.data.startPageToken;
   if (startPageToken == null) {
-    throw new Error("StartPageToken is unexpectedly null")
+    throw new Error("StartPageToken is unexpectedly null");
   }
 
+  const uri = process.env.NGROK_URI ?? process.env.NEXT_PUBLIC_URL;
   const listener = await drive.changes.watch({
     pageToken: startPageToken,
     supportsAllDrives: true,
     supportsTeamDrives: true,
     requestBody: {
       id: channelId,
-      type: 'web_hook',
-      address:
-        `${process.env.NGROK_URI}/api/drive-activity/notification`,
-      kind: 'api#channel',
+      type: "web_hook",
+      address: `${uri}/api/drive-activity/notification`,
+      kind: "api#channel",
     },
-  })
+  });
 
   if (listener.status == 200) {
     //if listener created store its channel id in db
@@ -60,12 +60,12 @@ export async function GET() {
       data: {
         googleResourceId: listener.data.resourceId,
       },
-    })
+    });
 
     if (channelStored) {
-      return new NextResponse('Listening to changes...')
+      return new NextResponse("Listening to changes...");
     }
   }
 
-  return new NextResponse('Oops! something went wrong, try again')
+  return new NextResponse("Oops! something went wrong, try again");
 }
