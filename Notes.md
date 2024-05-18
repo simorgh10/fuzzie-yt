@@ -341,4 +341,24 @@ flowPath.splice(flowPath[current], 1)
 
 > bun run build
 
-> vercel
+* create an empty repository fuzzie-yt in github
+
+
+> git remote add origin https://github.com/simorgh10/fuzzie-yt.git
+
+> git branch -M main
+
+> git push -u origin main
+
+* Log into Vercel. Add New Project > Git settings select repositories > add fuzzie-yt. Import fuzzie-yt. 
+
+* For environment variables, copy the ones from .env.local. Deploy. 
+* Change domain to papaye-fuzzie.vercel.app.
+
+* Build failed on Vercel. 
+```
+PrismaClientInitializationError: Prisma has detected that this project was built on Vercel, which caches dependencies. This leads to an outdated Prisma Client because Prisma's auto-generation isn't triggered. To fix this, make sure to run the `prisma generate` command during the build process.
+```
+see https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/vercel-caching-issue
+
+* Solution is to a
